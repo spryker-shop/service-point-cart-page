@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace SprykerShopTest\Yves\ServicePointPage\Plugin;
+namespace SprykerShopTest\Yves\ServicePointCartPage\Plugin;
 
 use Codeception\Test\Unit;
 use Generated\Shared\Transfer\ItemTransfer;
