@@ -90,6 +90,9 @@ class ServicePointCheckoutAddressStepPostExecutePluginTest extends Unit
     }
 
     /**
+     * @covers \SprykerShop\Yves\ServicePointCartPage\Replacer\QuoteItemReplacer::unsetPropertiesForFailedReplacementItem()
+     * @covers \SprykerShop\Yves\ServicePointCartPage\ServicePointCartPageConfig::getQuoteItemFieldsAllowedForReset()
+     *
      * @return void
      */
     public function testUnsetRequiredItemPropertiesWhileReplacementFails(): void
@@ -100,7 +103,10 @@ class ServicePointCheckoutAddressStepPostExecutePluginTest extends Unit
             ->setShipment(new ShipmentTransfer())
             ->setShipmentType(new ShipmentTypeTransfer())
             ->setGroupKey(static::ITEM_GROUP_KEY);
+
         $quoteTransfer = (new QuoteTransfer())->addItem($itemTransfer);
+
+        // This one sets the failed replacement item which is used in to determine if any of the configured have to be set to `null`
         $quoteReplacementResponseTransfer = (new QuoteReplacementResponseTransfer())
             ->setQuote($quoteTransfer)
             ->addError((new QuoteErrorTransfer())->setMessage(static::QUOTE_ERROR_MESSAGE))

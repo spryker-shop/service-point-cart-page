@@ -15,9 +15,7 @@ class ServicePointCartPageConfig extends AbstractBundleConfig
     /**
      * @var list<string>
      */
-    protected const QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [
-        ItemTransfer::SERVICE_POINT,
-    ];
+    protected const array QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET = [];
 
     /**
      * Specification:
@@ -29,6 +27,12 @@ class ServicePointCartPageConfig extends AbstractBundleConfig
      */
     public function getQuoteItemFieldsAllowedForReset(): array
     {
-        return static::QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET;
+        if (static::QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET) {
+            return static::QUOTE_ITEM_FIELDS_ALLOWED_FOR_RESET;
+        }
+
+        return [
+            ItemTransfer::SERVICE_POINT,
+        ];
     }
 }
