@@ -48,9 +48,6 @@ class ServicePointCheckoutAddressStepPostExecutePluginTest extends Unit
      */
     protected ServicePointCartPageTester $tester;
 
-    /**
-     * @return void
-     */
     public function testReplacementSuccessful(): void
     {
         // Arrange
@@ -148,11 +145,6 @@ class ServicePointCheckoutAddressStepPostExecutePluginTest extends Unit
         $this->assertNull($itemTransfer->getServicePoint());
     }
 
-    /**
-     * @param bool $shouldExecute
-     *
-     * @return \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToGlossaryStorageClientInterface
-     */
     protected function createGlossaryStorageClientMock(bool $shouldExecute): ServicePointCartPageToGlossaryStorageClientInterface
     {
         $invokedCount = $shouldExecute ? $this->once() : $this->never();
@@ -164,11 +156,6 @@ class ServicePointCheckoutAddressStepPostExecutePluginTest extends Unit
         return $glossaryStorageClientMock;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer
-     *
-     * @return \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToServicePointCartClientInterface
-     */
     protected function createServicePointCartClientMock(
         QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer
     ): ServicePointCartPageToServicePointCartClientInterface {
@@ -183,11 +170,6 @@ class ServicePointCheckoutAddressStepPostExecutePluginTest extends Unit
         return $servicePointCartClientMock;
     }
 
-    /**
-     * @param bool $shouldExecute
-     *
-     * @return \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToLocaleClientInterface
-     */
     protected function createLocaleClientMock(bool $shouldExecute): ServicePointCartPageToLocaleClientInterface
     {
         $invokedCount = $shouldExecute ? $this->once() : $this->never();
@@ -198,11 +180,6 @@ class ServicePointCheckoutAddressStepPostExecutePluginTest extends Unit
         return $localeClientMock;
     }
 
-    /**
-     * @param bool $shouldExecute
-     *
-     * @return \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToMessengerClientInterface
-     */
     protected function createMessengerClientMock(bool $shouldExecute): ServicePointCartPageToMessengerClientInterface
     {
         $invokedCount = $shouldExecute ? $this->once() : $this->never();
@@ -213,9 +190,6 @@ class ServicePointCheckoutAddressStepPostExecutePluginTest extends Unit
         return $messengerClientMock;
     }
 
-    /**
-     * @return \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToQuoteClientInterface
-     */
     protected function createQuoteClientMock(): ServicePointCartPageToQuoteClientInterface
     {
         $quoteClientMock = $this->getMockBuilder(ServicePointCartPageToQuoteClientInterface::class)

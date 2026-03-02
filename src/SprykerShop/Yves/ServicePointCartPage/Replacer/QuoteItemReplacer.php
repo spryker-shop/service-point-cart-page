@@ -38,12 +38,6 @@ class QuoteItemReplacer implements QuoteItemReplacerInterface
      */
     protected ServicePointCartPageConfig $servicePointCartPageConfig;
 
-    /**
-     * @param \SprykerShop\Yves\ServicePointCartPage\MessageAdder\MessageAdderInterface $messageAdder
-     * @param \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToServicePointCartClientInterface $servicePointCartClient
-     * @param \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToQuoteClientInterface $quoteClient
-     * @param \SprykerShop\Yves\ServicePointCartPage\ServicePointCartPageConfig $servicePointCartPageConfig
-     */
     public function __construct(
         MessageAdderInterface $messageAdder,
         ServicePointCartPageToServicePointCartClientInterface $servicePointCartClient,
@@ -56,11 +50,6 @@ class QuoteItemReplacer implements QuoteItemReplacerInterface
         $this->servicePointCartPageConfig = $servicePointCartPageConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function replaceQuoteItems(QuoteTransfer $quoteTransfer): QuoteResponseTransfer
     {
         $quoteReplacementResponseTransfer = $this->servicePointCartClient->replaceQuoteItems($quoteTransfer);
@@ -83,11 +72,6 @@ class QuoteItemReplacer implements QuoteItemReplacerInterface
         return $quoteResponseTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer
-     *
-     * @return void
-     */
     protected function unsetPropertiesForFailedReplacementItems(QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer): void
     {
         $failedItemGroupKeys = [];
@@ -102,11 +86,6 @@ class QuoteItemReplacer implements QuoteItemReplacerInterface
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ItemTransfer $itemTransfer
-     *
-     * @return void
-     */
     protected function unsetPropertiesForFailedReplacementItem(ItemTransfer $itemTransfer): void
     {
         $itemTransferProperties = $this->servicePointCartPageConfig->getQuoteItemFieldsAllowedForReset();
@@ -115,11 +94,6 @@ class QuoteItemReplacer implements QuoteItemReplacerInterface
         }
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer
-     *
-     * @return bool
-     */
     protected function getIsQuoteResponseSuccessful(QuoteReplacementResponseTransfer $quoteReplacementResponseTransfer): bool
     {
         return $quoteReplacementResponseTransfer->getErrors()->count() === 0

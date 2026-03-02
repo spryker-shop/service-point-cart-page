@@ -9,8 +9,5 @@ namespace SprykerShop\Yves\ServicePointCartPage\Dependency\Client;
 
 interface ServicePointCartPageToLocaleClientInterface
 {
-    /**
-     * @return string
-     */
     public function getCurrentLocale(): string;
 }

@@ -25,11 +25,6 @@ class ServicePointCartPageToServicePointCartClientBridge implements ServicePoint
         $this->servicePointCartClient = $servicePointCartClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteReplacementResponseTransfer
-     */
     public function replaceQuoteItems(QuoteTransfer $quoteTransfer): QuoteReplacementResponseTransfer
     {
         return $this->servicePointCartClient->replaceQuoteItems($quoteTransfer);

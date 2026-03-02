@@ -22,11 +22,6 @@ class ServicePointCartPageToMessengerClientBridge implements ServicePointCartPag
         $this->messengerClient = $messengerClient;
     }
 
-    /**
-     * @param string $message
-     *
-     * @return void
-     */
     public function addErrorMessage(string $message): void
     {
         $this->messengerClient->addErrorMessage($message);

@@ -29,11 +29,6 @@ class MessageAdder implements MessageAdderInterface
      */
     protected ServicePointCartPageToLocaleClientInterface $localeClient;
 
-    /**
-     * @param \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToGlossaryStorageClientInterface $glossaryStorageClient
-     * @param \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToMessengerClientInterface $messengerClient
-     * @param \SprykerShop\Yves\ServicePointCartPage\Dependency\Client\ServicePointCartPageToLocaleClientInterface $localeClient
-     */
     public function __construct(
         ServicePointCartPageToGlossaryStorageClientInterface $glossaryStorageClient,
         ServicePointCartPageToMessengerClientInterface $messengerClient,

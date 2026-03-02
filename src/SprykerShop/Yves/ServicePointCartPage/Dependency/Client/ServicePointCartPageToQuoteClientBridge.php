@@ -24,11 +24,6 @@ class ServicePointCartPageToQuoteClientBridge implements ServicePointCartPageToQ
         $this->quoteClient = $quoteClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return void
-     */
     public function setQuote(QuoteTransfer $quoteTransfer): void
     {
         $this->quoteClient->setQuote($quoteTransfer);

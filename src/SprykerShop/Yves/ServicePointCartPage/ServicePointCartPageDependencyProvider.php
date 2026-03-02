@@ -45,11 +45,6 @@ class ServicePointCartPageDependencyProvider extends AbstractBundleDependencyPro
      */
     public const CLIENT_MESSENGER = 'CLIENT_MESSENGER';
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -63,11 +58,6 @@ class ServicePointCartPageDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addServicePointCartClient(Container $container): Container
     {
         $container->set(static::CLIENT_SERVICE_POINT_CART, function (Container $container) {
@@ -79,11 +69,6 @@ class ServicePointCartPageDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addQuoteClient(Container $container): Container
     {
         $container->set(static::CLIENT_QUOTE, function (Container $container) {
@@ -95,11 +80,6 @@ class ServicePointCartPageDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addGlossaryStorageClient(Container $container): Container
     {
         $container->set(static::CLIENT_GLOSSARY_STORAGE, function (Container $container) {
@@ -111,11 +91,6 @@ class ServicePointCartPageDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addLocaleClient(Container $container): Container
     {
         $container->set(static::CLIENT_LOCALE, function (Container $container) {
@@ -127,11 +102,6 @@ class ServicePointCartPageDependencyProvider extends AbstractBundleDependencyPro
         return $container;
     }
 
-    /**
-     * @param \Spryker\Yves\Kernel\Container $container
-     *
-     * @return \Spryker\Yves\Kernel\Container
-     */
     protected function addMessengerClient(Container $container): Container
     {
         $container->set(static::CLIENT_MESSENGER, function (Container $container) {

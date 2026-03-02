@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\QuoteTransfer;
 
 interface QuoteItemReplacerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\QuoteTransfer $quoteTransfer
-     *
-     * @return \Generated\Shared\Transfer\QuoteResponseTransfer
-     */
     public function replaceQuoteItems(QuoteTransfer $quoteTransfer): QuoteResponseTransfer;
 }
